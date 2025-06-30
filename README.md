@@ -1,6 +1,6 @@
 # 🧠 Fingerprint Recognition using Deep Learning and Flask
 
-This is my final year project for fingerprint recognition using Convolutional Neural Networks (CNN) and Grad-CAM visualization. The app is built using Python and deployed with Flask.
+This is my final year project for fingerprint recognition using Convolutional Neural Networks (CNN). The app is built using Python and deployed with Flask.
 
 ## 📁 Project Structure
 
@@ -22,7 +22,6 @@ fingerprint_model/
 - CNN model trained on SOCOFing dataset
 - Flask web interface to upload fingerprint images
 - Prediction of user ID from fingerprint
-- Grad-CAM visualization for model explainability
 - Custom UI with sounds and feedback icons
 
 ## 🚀 Installation
@@ -48,8 +47,6 @@ TensorFlow / Keras
 Flask
 
 OpenCV
-
-Grad-CAM
 
 HTML/CSS
 
