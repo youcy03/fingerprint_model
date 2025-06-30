@@ -35,10 +35,10 @@ python app.py
 ## 📸 Preview
 
 ### Homepage
-![App Screenshot](app.png)
+![App Screenshot](app/app.png)
 
 ### Prediction Result
-![Prediction Screenshot](app_correct.png)
+![Prediction Screenshot](app/app_correct.png)
 
 🧠 Tech Stack
 Python
