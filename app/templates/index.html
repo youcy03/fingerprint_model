@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fingerprint Recognition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="App Logo" style="width: 80px; margin-bottom: 20px;">
+
+    <h1>Upload a Fingerprint</h1>
+
+    <div class="loading-container" id="loading">
+        <div class="spinner"></div>
+        <span>Predicting...</span>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="upload-section">
+            <label for="file-upload" class="custom-file-upload">Choose a Fingerprint</label>
+            <input id="file-upload" type="file" name="file" accept="image/*" required />
+        </div>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+<h2 class="result">{{ prediction }}</h2>
+
+        <!-- 👇 Scanning Fingerprint Design -->
+        <div class="scanner-container">
+            <img src="{{ url_for('static', filename='scan_fingerprint.png') }}" alt="Scan Background" class="scanner-bg">
+
+            <div class="scan-line"></div>
+
+            <div class="user-fingerprint">
+{% if "Unknown" in prediction %}
+    <img src="{{ image_path }}" class="user-fp error-fp">
+{% else %}
+    <img src="{{ image_path }}" class="user-fp">
+{% endif %}
+{% if "Unknown" in prediction %}
+    <img src="{{ url_for('static', filename='cross_icon.png') }}" class="check-icon" alt="Cross Icon">
+{% else %}
+    <img src="{{ url_for('static', filename='check_icon.png') }}" class="check-icon" alt="Check Icon">
+{% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    <script>
+        const form = document.querySelector("form");
+        const loading = document.getElementById("loading");
+        form.addEventListener("submit", function () {
+            loading.classList.add("show");
+        });
+    </script>
+
+    <audio id="success-sound" src="{{ url_for('static', filename='sounds/success.mp3') }}"></audio>
+<audio id="error-sound" src="{{ url_for('static', filename='sounds/error.mp3') }}"></audio>
+
+<script>
+    const successSound = document.getElementById("success-sound");
+    const errorSound = document.getElementById("error-sound");
+
+    {% if prediction %}
+        {% if "Unknown" in prediction %}
+            errorSound.play();
+        {% else %}
+            successSound.play();
+        {% endif %}
+    {% endif %}
+</script>
+
+    <footer class="footer">
+        <p>© 2025 Fingerprint Recognition | Yousra Bachri</p>
+    </footer>
+
+</body>
+</html>

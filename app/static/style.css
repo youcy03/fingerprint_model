@@ -1,0 +1,228 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
+    padding-top: 40px;
+    color: #333;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.result {
+    font-size: 24px;
+    color: #8c52ff;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Form Upload */
+.upload-section {
+    margin-bottom: 20px;
+}
+
+.custom-file-upload {
+    background-color: #C649F8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload:hover {
+    background-color: #8c52ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+.custom-file-upload {
+    transition: all 0.3s ease;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #C649F8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #8c52ff;
+}
+
+/* Scan Design */
+.scanner-container {
+    position: relative;
+    width: 400px;
+    margin: 0 auto 60px auto;
+}
+
+.scanner-bg {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+.user-fingerprint {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    text-align: center;
+}
+
+.user-fp {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 10px #00ff88;
+}
+
+.error-fp {
+    border: 2px solid red;
+    box-shadow: 0 0 10px red;
+}
+
+
+
+.check-icon {
+    width: 25px;
+    margin-top: 4px;
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #00ff88;
+    box-shadow: 0 0 8px #00ff88;
+    animation: scanMove 2s linear infinite;
+}
+
+@keyframes scanMove {
+    0% { top: 10%; }
+    100% { top: 75%; }
+}
+
+/* Loading Spinner */
+.loading-container {
+    display: none;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.loading-container.show {
+    display: block;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 4px solid #ccc;
+    border-top-color: #C649F8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
+    100% { transform: translateX(0); }
+}
+
+
+@media screen and (max-width: 600px) {
+    /* Scanner container responsive */
+    .scanner-container {
+        width: 90%;
+    }
+
+    /* User fingerprint wrapper */
+    .user-fingerprint {
+        width: 70px;
+        bottom: 6%;
+    }
+
+    /* Fingerprint image */
+    .user-fp,
+    .error-fp {
+        width: 100%;
+    }
+
+    /* Check or Cross icon centered below fingerprint */
+    .check-icon {
+        width: 20px;
+        margin-top: 4px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Upload section smaller */
+    .custom-file-upload {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Predict button smaller */
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Result text smaller */
+    .result,
+    .error-result {
+        font-size: 18px;
+    }
+
+    /* Logo smaller */
+    img[alt="App Logo"] {
+        width: 60px;
+    }
+
+    /* Spinner smaller */
+    .spinner {
+        width: 24px;
+        height: 24px;
+        border-width: 3px;
+    }
+
+    /* Footer font size smaller */
+    .footer {
+        font-size: 12px;
+    }
+}
