@@ -40,6 +40,7 @@ python app.py
 ![Prediction Screenshot](app/app_correct.png)
 
 🧠 Tech Stack
+
 Python
 
 TensorFlow / Keras
