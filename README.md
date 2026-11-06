@@ -9,7 +9,7 @@ The original application is developed using Python, TensorFlow/Keras, OpenCV and
 
 Try the online fingerprint recognition application:
 
-👉 **[Open Fingerprint Recognition Demo](https://youcy-fingerprint-recognition-demo.static.hf.space?utm_source=chatgpt.com))**
+👉 **[Open Fingerprint Recognition Demo](https://youcy-fingerprint-recognition-demo.static.hf.space?utm_source=chatgpt.com)**
 
 **Note:** The online demo is a separate browser-based version powered by TensorFlow.js. The original application remains based on Flask and TensorFlow/Keras.
 
