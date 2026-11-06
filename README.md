@@ -1,3 +1,12 @@
+---
+title: Fingerprint Recognition
+emoji: 🔍
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+---
+
 # 🧠 Fingerprint Recognition using Deep Learning and Flask
 
 This is my final year project for fingerprint recognition using Convolutional Neural Networks (CNN). The app is built using Python and deployed with Flask.

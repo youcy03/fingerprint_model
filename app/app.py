@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-from utils import predict_fingerprint
 import os
 from werkzeug.utils import secure_filename
 import time
@@ -14,8 +13,14 @@ UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "static", "uploads")
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 # Load model and encoder once
-model = load_model("model/final_good_model.keras")
-with open("model/label_encoder.pkl", "rb") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "model", "final_good_model.keras")
+encoder_path = os.path.join(BASE_DIR, "model", "label_encoder.pkl")
+
+model = load_model(model_path)
+
+with open(encoder_path, "rb") as f:
     label_encoder = pickle.load(f)
 
 # Preprocessing function (mimic utils if you want)
